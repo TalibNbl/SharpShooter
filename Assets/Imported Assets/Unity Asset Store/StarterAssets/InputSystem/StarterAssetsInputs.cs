@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool shoot;
+		public bool zoom;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -22,6 +23,11 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
         
 
+
+		private void Start()
+		{
+			SetCursorState(true);
+		}
 #if ENABLE_INPUT_SYSTEM
         public void OnMove(InputValue value)
 		{
@@ -50,6 +56,11 @@ namespace StarterAssets
 		{
 			ShootInput(value.isPressed);
 		}
+
+		public void OnZoom(InputValue value)
+		{
+			ZoomInput(value.isPressed);
+		}
 #endif
 
 
@@ -77,13 +88,18 @@ namespace StarterAssets
         {
             shoot = newShootState;
 		}
+
+		public void ZoomInput(bool newZoomState)
+		{
+			zoom = newZoomState;
+		}
 		
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
 		}
 
-		private void SetCursorState(bool newState)
+		public void SetCursorState(bool newState)
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}

@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fbceddbcd96bbd4a8c2036ef087ca45, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
-  Damage: 2
-  FireRate: 0.5
+  weaponPrefab: {fileID: 6143460136227389307, guid: a63c0a77f88a97e41ab739dc8e58f15c, type: 3}
   HitVFXPrefab: {fileID: 2942829409933395827, guid: f54511e4b5c1d12419c0f41ca877fda2, type: 3}
+  Damage: 1
+  MagazineSize: 12
+  FireRate: 0.3
+  IsAutomatic: 0
+  CanZoom: 0
+  ZoomAmount: 10
+  ZoomRotationSpeed: 0.3

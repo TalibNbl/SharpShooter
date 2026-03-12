@@ -117,6 +117,11 @@ namespace StarterAssets
 			Move();
 		}
 
+		public void ChangeRotationSpeed(float newRotationSpeed)
+		{
+			RotationSpeed = newRotationSpeed;
+		}
+
 		private void LateUpdate()
 		{
 			CameraRotation();
